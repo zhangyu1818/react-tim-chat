@@ -1,0 +1,61 @@
+@import '../../theme/default';
+@import '../../theme/utils';
+
+.tim-message-list-content-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr 58px;
+  grid-template-rows: repeat(2, calc(@font-size-normal * 1.5));
+  grid-column-gap: 8px;
+  align-items: end;
+  cursor: pointer;
+  padding: @padding-sm @padding-md;
+  user-select: none;
+  &.active {
+    background: @message-list-item-background;
+    &::after {
+      border-color: transparent;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    right: @padding-md;
+    bottom: 0;
+    left: @padding-md;
+    border-bottom: @border-width solid @border-color;
+  }
+  &-avatar {
+    grid-row-start: span 2;
+  }
+  &-name {
+    margin: 0;
+    font-size: @font-size-sm;
+    color: @text-color-1;
+    .textOverflow();
+    .active & {
+      color: @text-contrast-color;
+    }
+  }
+  &-date {
+    position: absolute;
+    top: @padding-sm;
+    right: @padding-md;
+    font-size: @font-size-normal;
+    transform: translateY(31.25%) scale(0.625);
+    transform-origin: top right;
+    color: @text-color-2;
+    white-space: nowrap;
+    .active & {
+      color: rgba(@text-contrast-color, 0.85);
+    }
+  }
+  &-desc {
+    .textOverflow();
+    grid-column-start: span 2;
+    font-size: @font-size-sm;
+    .active & {
+      color: rgba(@text-contrast-color, 0.85);
+    }
+  }
+}

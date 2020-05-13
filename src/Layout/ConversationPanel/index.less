@@ -1,0 +1,34 @@
+@import '../../theme/default';
+
+.tim-conversation {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  &-panel {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    &-main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+  &-header {
+    height: @conversation-header-height;
+    border-bottom: @border-width solid @border-color;
+    flex: none;
+    padding: 0 @padding-lg;
+    display: flex;
+    align-items: center;
+  }
+  &-content {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    &-aside {
+      height: 100%;
+      flex: none;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../../../theme/default';
+
+// 普通文本消息
+.tim-conversation-message-type-text {
+  background: @message-self-background;
+  padding: @padding-xs @padding-md;
+  border-radius: @border-radius-base;
+  width: max-content;
+  float: right;
+  &-emoji {
+    width: 20px;
+    vertical-align: middle;
+    position: relative;
+    top: -0.1em;
+  }
+  .others & {
+    background: @message-others-background;
+    float: left;
+  }
+}

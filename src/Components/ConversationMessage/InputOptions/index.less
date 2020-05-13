@@ -1,0 +1,20 @@
+@import '../../../theme/default';
+
+.tim-conversation-emoji {
+  .ant-popover-inner-content {
+    padding: 0;
+    height: 200px;
+    overflow-y: scroll;
+  }
+}
+.tim-conversation-emoji-panel {
+  padding: @padding-sm @padding-md;
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(10, 36px);
+  img {
+    box-sizing: border-box;
+    padding: 4px;
+    width: 100%;
+  }
+}

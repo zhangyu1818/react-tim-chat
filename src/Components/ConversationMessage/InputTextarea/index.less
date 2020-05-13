@@ -1,0 +1,41 @@
+@import '../../../theme/default';
+
+.tim-container .tim-conversation-input-area {
+  position: relative;
+  height: @conversation-input-height;
+  border-top: @border-width solid @border-color;
+  border-radius: 0 0 @border-radius-lg 0;
+  padding-top: 36px;
+  &-options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 36px;
+    padding: 0 @padding-lg;
+    display: flex;
+    align-items: center;
+    color: @icon-color;
+    > * {
+      margin-right: @margin-xs;
+    }
+  }
+  &-textarea {
+    width: 100%;
+    height: 100%;
+    line-height: 1.2;
+    padding: 0 @padding-lg;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: @font-size-sm;
+    &::placeholder {
+      color: rgba(@text-color-1, 0.25);
+    }
+  }
+  &-send {
+    position: absolute;
+    right: @padding-lg;
+    bottom: @padding-xs;
+  }
+}

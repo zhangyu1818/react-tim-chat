@@ -1,0 +1,18 @@
+@import '../../theme/default';
+@import '../../theme/utils';
+
+.tim-message-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &-header {
+    height: @aside-left-header-height;
+    flex: none;
+    border-bottom: @border-width solid @border-color;
+  }
+  &-content {
+    flex: 1;
+    overflow-y: auto;
+    color: @text-color-3;
+  }
+}

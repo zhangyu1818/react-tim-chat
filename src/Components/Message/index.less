@@ -1,0 +1,73 @@
+@import '../../theme/default';
+
+.tim-conversation-message {
+  font-size: @font-size-sm;
+  overflow: hidden;
+  padding-top: @padding-lg;
+  margin-bottom: @margin-sm;
+  // 消息内容
+  &-info {
+    display: flex;
+    flex-direction: row-reverse;
+    &-content {
+      position: relative;
+      margin: 0 @margin-sm;
+      &:hover &-date {
+        display: block;
+      }
+      &-name {
+        font-size: 12px;
+        font-weight: normal;
+        color: @text-color-1;
+        margin: 0;
+        display: none;
+        .others.group & {
+          display: block;
+        }
+      }
+      &-date {
+        display: none;
+        font-size: 12px;
+        color: rgba(@text-color-1, 0.25);
+        transform: scale(0.9);
+        transform-origin: right;
+        padding: 0 4px;
+        .others & {
+          transform-origin: left;
+        }
+        .others.group & {
+          margin-left: @margin-md;
+        }
+      }
+    }
+    &-wrap {
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateY(-110%);
+      white-space: nowrap;
+      .others.group & {
+        position: static;
+        transform: translateY(-10%);
+      }
+      .others & {
+        left: 0;
+        right: initial;
+      }
+    }
+    .others & {
+      flex-direction: row;
+    }
+    // 系统消息
+    .system & {
+      justify-content: center;
+      &-date {
+        font-size: 12px;
+        margin-bottom: @margin-xs;
+        color: rgba(@text-color-1, 0.25);
+      }
+    }
+  }
+
+}

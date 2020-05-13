@@ -1,0 +1,24 @@
+@import './theme/default';
+@import './theme/antd';
+
+.tim-container {
+  display: grid;
+  width: max-content;
+  background: #fff;
+  font-size: @font-size-normal;
+  color: @text-color-2;
+  height: @conversation-width;
+  grid-template-columns: @aside-width @conversation-width;
+  border-radius: @border-radius-lg;
+  overflow: hidden;
+  box-shadow: 0 9px 28px 8px rgba(0, 0, 0, 0.05), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12);
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+  p {
+    margin: 0;
+  }
+}

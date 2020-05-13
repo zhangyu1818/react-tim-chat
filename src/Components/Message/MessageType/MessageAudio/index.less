@@ -1,0 +1,58 @@
+@import '../../../../theme/default';
+
+.tim-conversation-message-type-audio {
+  position: relative;
+  width: 100px;
+  height: 38px;
+  background: @message-self-background;
+  border-radius: @border-radius-base;
+
+  .others & {
+    background: @message-others-background;
+    &-second {
+      left: unset;
+      right: 0;
+      transform: translateX(calc(100% + 1ch));
+    }
+    &-play-icon {
+      left: @padding-xs;
+      right: unset;
+      transform: translateY(-50%);
+      filter: invert(67%) sepia(8%) saturate(35%) hue-rotate(169deg) brightness(85%) contrast(90%);
+    }
+  }
+
+  &-second {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(calc(-100% - 1ch));
+    color: @text-color-3;
+  }
+  &-play-icon {
+    position: absolute;
+    top: 50%;
+    right: @padding-xs;
+    transform: scaleX(-1) translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background-image: url('../../../../assets/voice.png');
+    background-size: 88px 22px;
+    background-position: -44px;
+    background-color: transparent;
+    filter: invert(76%) sepia(36%) saturate(5923%) hue-rotate(188deg) brightness(85%) contrast(83%);
+    .play & {
+      animation: audio-play 1.6s infinite steps(1);
+    }
+  }
+}
+.loopKeyframes(@counter:0) when (@counter<=4) {
+  @size: unit(@counter * 25, %);
+  @{size} {
+    background-position: -22px * @counter;
+  }
+  .loopKeyframes(@counter + 1);
+}
+@keyframes audio-play {
+  .loopKeyframes();
+}

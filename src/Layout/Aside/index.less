@@ -1,0 +1,15 @@
+@import '../../theme/default';
+
+.tim-aside {
+  display: flex;
+  height: inherit;
+  &-left {
+    width: @aside-left-width;
+    height: 100%;
+    background: @primary-color;
+  }
+  &-right {
+    width: @aside-right-width;
+    border-right: @border-width solid @border-color;
+  }
+}
